@@ -5,28 +5,111 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Java General Knowledge</title>
+    <title>Developer's documentation</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
-<h2>Java General Knowledge</h2>
-<h2>Polymorphism</h2>
-<h3>Ad hoc</h3>
-<p>Overload, same method with different signature.</p>
-<pre><code>void test(Integer i) and void test(String s)</code></pre>
-<h3>Subtype</h3>
-<p>Override, same method, same signature in a subclass</p>
-<p>inheritance</p>
-<p><a href="https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html">Oracle polymorphism</a>
-</p>
-<h3>Parametric</h3>
-<p>Template, generic method and generic type</p>
-<pre><code> example: List&lt;T&gt;</code></pre>
 
-<nav>
-    <a class="btn btn-outline-primary" href="#">Up</a>
-</nav>
+    <h1>Developer's documentation</h1>
+
+    <h2>Object-oriented programming knowledge</h2>
+    <h3>Polymorphism</h3>
+    <h4>Ad hoc</h4>
+    <p>@Overload (fr. surcharge), same method with different signature.</p>
+    <pre><code>void test(Integer i) and void test(String s)</code></pre>
+    <h4>Subtype</h4>
+    <p>@Override (fr. redefinition), same method, same signature in a subclass</p>
+    <pre><code>example: inheritance</code></pre>
+    <p><a href="https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html">Oracle polymorphism definition</a>
+    </p>
+    <h4>Parametric</h4>
+    <p>Template, generic method and generic type</p>
+    <pre><code> example: List&lt;T&gt;</code></pre>
+
+    <h3>Design patterns</h3>
+    <h4>Strategy pattern</h4>
+    <pre><code> example: Car has IBrakeBehavior. Brake and BrakeWithABS implements IBrakeBehavior.
+        BMW extends Car with BrakeWithABS behavior. Dacia extends Car with Brake behavior</code></pre>
+    <h4>Decorator pattern</h4>
+    <p>Onion structure. Compose (multiple) behavior on a root behavior</p>
+    <h4>Adaptor pattern</h4>
+    <p>Wrapper</p>
+    <h4>Proxy pattern</h4>
+    <p>Class in front of a behavior with his own behavior. ex. Image caching</p>
+    <h4>Facade pattern</h4>
+    <p>Class in front of a lot of other class, only using existing behavior</p>
+    <h4>Composite pattern</h4>
+    <p>Node, leaves</p>
+
+    <h3>Concepts</h3>
+    <h4>SOLID</h4>
+    <ul>
+        <li>
+            Single responsibility principle
+        </li>
+        <li>
+            Open/closed principle
+        </li>
+        <li>
+            Liskov substitution principle
+        </li>
+        <li>
+            Interface segregation principle
+        </li>
+        <li>
+            Dependency inversion principle
+        </li>
+    </ul>
+    <h4>Law of demeter, principle of least knowledge, talk only yo your immediate friend</h4>
+    <p>Avoid coupling</p>
+    <h4>KISS</h4>
+    <p>Keep It Simple, Stupid</p>
+    <h4>DRY</h4>
+    <p>Don't Repeat Yourself</p>
+    <h4>YAGNI </h4>
+    <p>You aren't gonna need it</p>
+
+
+    <h2>Java general knowledge</h2>
+
+    <h3>Hashcode &amp; equals</h3>
+    <p>equals : default implementation in object is same reference.</p>
+    <p>hashcode is used for Hash collections ex. HashMap. When equals is overridden, hashcode MUST be overridden
+        as well</p>
+    <h3>Collections</h3>
+    <h4>Map</h4>
+    <p>HashMap</p>
+    <p>is a Node tab. Node is a Map.Entry &lt;K, V&gt; with key hash contains a Map.Entry&lt;K, V&gt; Set to
+        cache values for keySet() and values()
+        Handle collision : key hash -> node bin. When one key hash has several nodes in bin, iterate on each key
+        in bin to find correct node.
+        Hashcode method should give unique hashcode for a object to maximize hashmap performance</p>
+    <h4>Set</h4>
+    <p>HashSet</p>
+    <p>TreeSet</p>
+    <h4>List</h4>
+    <p>ArrayList</p>
+    <p>LinkedList</p>
+
+    <h3>Compare object</h3>
+    <h4>Comparable</h4>
+    <p>Interface to implement in class to compare: class' natural ordering</p>
+    <h4>Comparator</h4>
+    <p>Implement a comparator for the class to compare</p>
+    Pros:
+    <ul>
+        <li>
+            No need to change class to compare
+        </li>
+        <li>
+            Several comparators possible for a class to compare
+        </li>
+    </ul>
+
+    <nav>
+        <a class="btn btn-outline-primary" href="#">Up</a>
+    </nav>
 
 </div>
 <script src="js/bootstrap.min.js"></script>
