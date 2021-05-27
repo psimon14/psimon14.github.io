@@ -32,7 +32,8 @@
     <pre><code> example: Car has IBrakeBehavior. Brake and BrakeWithABS implements IBrakeBehavior.
         BMW extends Car with BrakeWithABS behavior. Dacia extends Car with Brake behavior</code></pre>
     <h4>Decorator pattern</h4>
-    <p>Onion structure. Compose (multiple) behavior on a root behavior</p>
+    <p>Onion structure. Compose (multiple) behavior on a root behavior. Decorator implements and contains a variable typed with the interface. 
+        it implements the method by calling method on the contained variable. Every decorator extension can compose on an other DecoA(DecoB(Root)) </p>
     <h4>Adaptor pattern</h4>
     <p>Wrapper</p>
     <h4>Proxy pattern</h4>
@@ -40,7 +41,9 @@
     <h4>Facade pattern</h4>
     <p>Class in front of a lot of other class, only using existing behavior</p>
     <h4>Composite pattern</h4>
-    <p>Node, leaves</p>
+    <p>Node, leaves : Composite/Node and Leave inherits Component, both implement operation method. Composite contains one or many Components</p>
+    <h4>Visitor pattern</h4>
+    <p>Implement a specific behavior on class that have no common parent. i.e: XML exporter visitor with visit(Element), Element accept ( visitor.visit(this)</p>
 
     <h3>Concepts</h3>
     <h4>SOLID</h4>
