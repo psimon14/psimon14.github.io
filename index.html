@@ -44,21 +44,31 @@
 
     <h3>Concepts</h3>
     <h4>SOLID</h4>
+    http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
     <ul>
         <li>
-            Single responsibility principle
+            Single responsibility principle : A class should have one, and only one, reason to change.
+            method / class should have a specific responsability
+            
         </li>
         <li>
-            Open/closed principle
+            Open/closed principle : You should be able to extend a classes behavior, without modifying it.
+            changing public API -> don't change signature, expose abstract, new + old (deprecated).
         </li>
         <li>
-            Liskov substitution principle
+            Liskov substitution principle : Derived classes must be substitutable for their base classes.
+            "not implement method" or type checking breaks Liskov principle. Solution: breaking relationship, small focused class.
+            /!\ don't use "is a" but "substituable by"
         </li>
         <li>
-            Interface segregation principle
+            Interface segregation principle : fat interface, low cohesion, force implementaation, throw "not implement", empty implementation breaks ISP.
+            Solution: breaking large interface, adapter pattern
         </li>
         <li>
-            Dependency inversion principle
+            Dependency inversion principle : high level / low level depending on abstract, instead of high level depending on low level. 
+            Solution: dependency injection creation object from outside class, dependency in constructor/
+            IoC inversion of control, container controls object creation, Spring IoC container
+            Less coupling, better testing, mock dependecies
         </li>
     </ul>
     <h4>Law of demeter, principle of least knowledge, talk only yo your immediate friend</h4>
