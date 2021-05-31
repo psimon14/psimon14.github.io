@@ -28,6 +28,8 @@
     <pre><code> example: List&lt;T&gt;</code></pre>
 
     <h3>Design patterns</h3>
+    <a href="https://springframework.guru/gang-of-four-design-patterns/">Gang of Four design patterns</a> 
+    <a href="http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/factory.html">Patterns</a>
     <h4>Strategy pattern</h4>
     <pre><code> example: Car has IBrakeBehavior. Brake and BrakeWithABS implements IBrakeBehavior.
         BMW extends Car with BrakeWithABS behavior. Dacia extends Car with Brake behavior</code></pre>
@@ -44,7 +46,10 @@
     <p>Node, leaves : Composite/Node and Leave inherits Component, both implement operation method. Composite contains one or many Components</p>
     <h4>Visitor pattern</h4>
     <p>Implement a specific behavior on class that have no common parent. i.e: XML exporter visitor with visit(Element), Element accept ( visitor.visit(this)</p>
-
+    <h4>Delegation pattern</h4>
+    <p>Delegation is like inheritance done manually through object composition. Caller implements Parent with call(). Caller contains Delegate. call(delegate.call);<p>
+    <h4>Factory pattern</h4>
+    <p>interface Pizza, with<p>
     <h3>Concepts</h3>
     <h4>SOLID</h4>
     <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">Principles Orient-object design</a> 
