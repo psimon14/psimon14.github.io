@@ -132,7 +132,14 @@
         <code>while (low >= high) { midIndex = (low + high) / 2. midVal = array(midIndex).  </code>
         <code>if (toFind < midVal) high = midVal - 1 else if (toFind > mid) low = midVal + 1 else foundIndex = midIndex </code>
     </pre>
-    
+    <h3>Multi-threading</h3>
+    <h4>synchronize / lock</h4>
+    synchronize(new Object) similar to reentrant lock => both are reentrant, meaning signle thread can enter lock multiple times  
+    synchronize method in class A similar to synchronize (this) => locks the whole object A
+    <h4>Singleton</h4>
+    final static instance = new Singleton() to avoid 2 instances of singleton (no lazy instanciation with == null)
+    <h4>ConcurrentHashMap</h4>
+    HashMap with synchronized
     <nav>
         <a class="btn btn-outline-primary" href="#">Up</a>
     </nav>
