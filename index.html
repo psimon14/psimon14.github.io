@@ -28,11 +28,16 @@
     <pre><code> example: List&lt;T&gt;</code></pre>
 
     <h3>Design patterns</h3>
+    <a href="https://springframework.guru/gang-of-four-design-patterns/">Gang of Four design patterns</a>
+    <a href="http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/factory.html">Patterns</a>
     <h4>Strategy pattern</h4>
     <pre><code> example: Car has IBrakeBehavior. Brake and BrakeWithABS implements IBrakeBehavior.
         BMW extends Car with BrakeWithABS behavior. Dacia extends Car with Brake behavior</code></pre>
     <h4>Decorator pattern</h4>
-    <p>Onion structure. Compose (multiple) behavior on a root behavior</p>
+    <p>Onion structure. Compose (multiple) behavior on a root behavior. Decorator implements and contains a variable
+        typed with the interface.
+        it implements the method by calling method on the contained variable. Every decorator extension can compose on
+        an other DecoA(DecoB(Root)) </p>
     <h4>Adaptor pattern</h4>
     <p>Wrapper</p>
     <h4>Proxy pattern</h4>
@@ -40,25 +45,52 @@
     <h4>Facade pattern</h4>
     <p>Class in front of a lot of other class, only using existing behavior</p>
     <h4>Composite pattern</h4>
-    <p>Node, leaves</p>
-
+    <p>Node, leaves : Composite/Node and Leave inherits Component, both implement operation method. Composite contains
+        one or many Components</p>
+    <h4>Visitor pattern</h4>
+    <p>Implement a specific behavior on class that have no common parent. i.e: XML exporter visitor with visit(Element),
+        Element accept ( visitor.visit(this)</p>
+    <h4>Delegation pattern</h4>
+    <p>Delegation is like inheritance done manually through object composition. Caller implements Parent with call().
+        Caller contains Delegate. call(delegate.call);
+    <p>
+    <h4>Factory pattern</h4>
+    <p>The factory method pattern deals with the problem of creating objects (products) without specifying the exact
+        class of object that will be created.
+    <p>
+    <p>interface Product, with Concrete implementation, Factory will create these Products with a create method,
+        depending on a parameter (i.e. switch case)
+    <p>
     <h3>Concepts</h3>
     <h4>SOLID</h4>
+    <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">Principles Orient-object design</a>
     <ul>
         <li>
-            Single responsibility principle
+            Single responsibility principle : A class should have one, and only one, reason to change.
+            method / class should have a specific responsability
+
         </li>
         <li>
-            Open/closed principle
+            Open/closed principle : You should be able to extend a classes behavior, without modifying it.
+            changing public API -> don't change signature, expose abstract, new + old (deprecated).
         </li>
         <li>
-            Liskov substitution principle
+            Liskov substitution principle : Derived classes must be substitutable for their base classes.
+            "not implement method" or type checking breaks Liskov principle. Solution: breaking relationship, small
+            focused class.
+            /!\ don't use "is a" but "substituable by"
         </li>
         <li>
-            Interface segregation principle
+            Interface segregation principle : fat interface, low cohesion, force implementaation, throw "not implement",
+            empty implementation breaks ISP.
+            Solution: breaking large interface, adapter pattern
         </li>
         <li>
-            Dependency inversion principle
+            Dependency inversion principle : high level / low level depending on abstract, instead of high level
+            depending on low level.
+            Solution: dependency injection creation object from outside class, dependency in constructor/
+            IoC inversion of control, container controls object creation, Spring IoC container
+            Less coupling, better testing, mock dependecies
         </li>
     </ul>
     <h4>Law of demeter, principle of least knowledge, talk only yo your immediate friend</h4>
@@ -78,6 +110,7 @@
     <p>hashcode is used for Hash collections ex. HashMap. When equals is overridden, hashcode MUST be overridden
         as well</p>
     <h3>Collections</h3>
+    <a href="https://www.jmdoudoux.fr/java/dej/chap-collections.htm">Java collections</a>
     <h4>Map</h4>
     <p>HashMap</p>
     <p>is a Node tab. Node is a Map.Entry &lt;K, V&gt; with key hash contains a Map.Entry&lt;K, V&gt; Set to
@@ -106,13 +139,47 @@
             Several comparators possible for a class to compare
         </li>
     </ul>
-
-    <a href="javascript.html">Javascript</a>
-
+    <h4>Binary search</h4>
+    List needs to be sorted
+    <pre>
+        <code>low = 0, high = size - 1. </code>
+        <code>while (low >= high) { midIndex = (low + high) / 2. midVal = array(midIndex).  </code>
+        <code>if (toFind < midVal) high = midVal - 1 else if (toFind > mid) low = midVal + 1 else foundIndex = midIndex </code>
+    </pre>
+    <h3>Multi-threading</h3>
+    <h4>synchronize / lock</h4>
+    <p>synchronize(new Object) similar to reentrant lock => both are reentrant, meaning single thread can enter lock
+        multiple times. </p>
+    <p>synchronize method in class A similar to synchronize (this) => locks the whole object A. </p>
+    <h4>Singleton</h4>
+    final static instance = new Singleton() to avoid 2 instances of singleton (no lazy instanciation with == null)
+    <h4>ConcurrentHashMap</h4>
+    HashMap with synchronized
+    <h3>JPA: Java Persistence API</h3>
+    Implementations
+    <ul>
+        <li>
+            Hibernate
+        </li>
+        <li>
+            Eclipselink
+        </li>
+    </ul>
+    <h3>Introspection / Reflection</h3>
+    <h4>Introspection</h4>
+    Ability to examine type of an object at runtime. instanceof
+    <h4>Reflection</h4>
+    Modify an object at runtime
+    <h3>Java major changes</h3>
+    <h4>Java 8</h4>
+    <p>stream</p>
+    <p>forEach</p>
+    <p>computeIfPresent, putIfPresent, merge, replace on Map</p>
     <nav>
         <a class="btn btn-outline-primary" href="#">Up</a>
     </nav>
 
+    <a href="javascript.html">Javascript</a>
 </div>
 <script src="js/bootstrap.min.js"></script>
 </body>
