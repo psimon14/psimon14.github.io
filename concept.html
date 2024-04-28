@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Developer's documentation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+
+    <h1>Developer's documentation</h1>
+
+    <h3>Concepts</h3>
+    <h4>SOLID</h4>
+    <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">Principles Orient-object design</a>
+    <ul>
+        <li>
+            Single responsibility principle : A class should have one, and only one, reason to change.
+            method / class should have a specific responsability
+
+        </li>
+        <li>
+            Open/closed principle : You should be able to extend a classes behavior, without modifying it.
+            changing public API -> don't change signature, expose abstract, new + old (deprecated).
+        </li>
+        <li>
+            Liskov substitution principle : Derived classes must be substitutable for their base classes.
+            "not implement method" or type checking breaks Liskov principle. Solution: breaking relationship, small
+            focused class.
+            /!\ don't use "is a" but "substituable by"
+        </li>
+        <li>
+            Interface segregation principle : fat interface, low cohesion, force implementaation, throw "not implement",
+            empty implementation breaks ISP.
+            Solution: breaking large interface, adapter pattern
+        </li>
+        <li>
+            Dependency inversion principle : high level / low level depending on abstract, instead of high level
+            depending on low level.
+            Solution: dependency injection creation object from outside class, dependency in constructor/
+            IoC inversion of control, container controls object creation, Spring IoC container
+            Less coupling, better testing, mock dependecies
+        </li>
+    </ul>
+    <h4>Law of demeter, principle of least knowledge, talk only yo your immediate friend</h4>
+    <p>Avoid coupling</p>
+    <h4>KISS</h4>
+    <p>Keep It Simple, Stupid</p>
+    <h4>DRY</h4>
+    <p>Don't Repeat Yourself</p>
+    <h4>YAGNI </h4>
+    <p>You aren't gonna need it</p>
+
+    <nav>
+        <a class="btn btn-outline-primary" href="#">Up</a>
+        <a class="btn btn-outline-primary" href="index.html">Back</a>
+    </nav>
+
+</div>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

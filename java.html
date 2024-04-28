@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Developer's documentation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+
+    <h1>Developer's documentation</h1>
+    <h2>Java general knowledge</h2>
+    <h3>Hashcode &amp; equals</h3>
+    <p>equals : default implementation in object is same reference.</p>
+    <p>hashcode is used for Hash collections ex. HashMap. When equals is overridden, hashcode MUST be overridden
+        as well</p>
+    <h3>Collections</h3>
+    <a href="https://www.jmdoudoux.fr/java/dej/chap-collections.htm">Java collections</a>
+    <h4>Map</h4>
+    <p>HashMap</p>
+    <p>is a Node tab. Node is a Map.Entry &lt;K, V&gt; with key hash contains a Map.Entry&lt;K, V&gt; Set to
+        cache values for keySet() and values()
+        Handle collision : key hash -> node bin. When one key hash has several nodes in bin, iterate on each key
+        in bin to find correct node.
+        Hashcode method should give unique hashcode for a object to maximize hashmap performance</p>
+    <h4>Set</h4>
+    <p>HashSet</p>
+    <p>TreeSet</p>
+    <h4>List</h4>
+    <p>ArrayList</p>
+    <p>LinkedList</p>
+
+    <h3>Compare object</h3>
+    <h4>Comparable</h4>
+    <p>Interface to implement in class to compare: class' natural ordering</p>
+    <h4>Comparator</h4>
+    <p>Implement a comparator for the class to compare</p>
+    Pros:
+    <ul>
+        <li>
+            No need to change class to compare
+        </li>
+        <li>
+            Several comparators possible for a class to compare
+        </li>
+    </ul>
+    <h4>Binary search</h4>
+    List needs to be sorted
+    <pre>
+        <code>low = 0, high = size - 1. </code>
+        <code>while (low >= high) { midIndex = (low + high) / 2. midVal = array(midIndex).  </code>
+        <code>if (toFind < midVal) high = midVal - 1 else if (toFind > mid) low = midVal + 1 else foundIndex = midIndex </code>
+    </pre>
+    <h3>Multi-threading</h3>
+    <h4>synchronize / lock</h4>
+    <p>synchronize(new Object) similar to reentrant lock => both are reentrant, meaning single thread can enter lock
+        multiple times. </p>
+    <p>synchronize method in class A similar to synchronize (this) => locks the whole object A. </p>
+    <h4>Singleton</h4>
+    final static instance = new Singleton() to avoid 2 instances of singleton (no lazy instanciation with == null)
+    <h4>ConcurrentHashMap</h4>
+    HashMap with synchronized
+    <h3>JPA: Java Persistence API</h3>
+    Implementations
+    <ul>
+        <li>
+            Hibernate
+        </li>
+        <li>
+            Eclipselink
+        </li>
+    </ul>
+    <h3>Introspection / Reflection</h3>
+    <h4>Introspection</h4>
+    Ability to examine type of object at runtime. instanceof
+    <h4>Reflection</h4>
+    Modify an object at runtime
+    <h3>Java major changes</h3>
+    <h4>Java 8</h4>
+    <p>stream</p>
+    <p>forEach</p>
+    <p>computeIfPresent, putIfPresent, merge, replace on Map</p>
+
+    <nav>
+        <a class="btn btn-outline-primary" href="#">Up</a>
+        <a class="btn btn-outline-primary" href="index.html">Back</a>
+    </nav>
+
+</div>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Developer's documentation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <h2>Object-oriented programming knowledge</h2>
+    <h3>Polymorphism</h3>
+    <h4>Ad hoc</h4>
+    <p>@Overload (fr. surcharge), same method with different signature.</p>
+    <pre><code>void test(Integer i) and void test(String s)</code></pre>
+    <h4>Subtype</h4>
+    <p>@Override (fr. redefinition), same method, same signature in a subclass</p>
+    <pre><code>example: inheritance</code></pre>
+    <p><a href="https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html">Oracle polymorphism definition</a>
+    </p>
+    <h4>Parametric</h4>
+    <p>Template, generic method and generic type</p>
+    <pre><code> example: List&lt;T&gt;</code></pre>
+
+    <h3>Design patterns</h3>
+    <a href="https://springframework.guru/gang-of-four-design-patterns/">Gang of Four design patterns</a>
+    <a href="http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/factory.html">Patterns</a>
+    <h4>Strategy pattern</h4>
+    <pre><code> example: Car has IBrakeBehavior. Brake and BrakeWithABS implements IBrakeBehavior.
+        BMW extends Car with BrakeWithABS behavior. Dacia extends Car with Brake behavior</code></pre>
+    <h4>Decorator pattern</h4>
+    <p>Onion structure. Compose (multiple) behavior on a root behavior. Decorator implements and contains a variable
+        typed with the interface.
+        it implements the method by calling method on the contained variable. Every decorator extension can compose on
+        an other DecoA(DecoB(Root)) </p>
+    <h4>Adaptor pattern</h4>
+    <p>Wrapper</p>
+    <h4>Proxy pattern</h4>
+    <p>Class in front of a behavior with his own behavior. ex. Image caching</p>
+    <h4>Facade pattern</h4>
+    <p>Class in front of a lot of other class, only using existing behavior</p>
+    <h4>Composite pattern</h4>
+    <p>Node, leaves : Composite/Node and Leave inherits Component, both implement operation method. Composite contains
+        one or many Components</p>
+    <h4>Visitor pattern</h4>
+    <p>Implement a specific behavior on class that have no common parent. i.e: XML exporter visitor with visit(Element),
+        Element accept ( visitor.visit(this)</p>
+    <h4>Delegation pattern</h4>
+    <p>Delegation is like inheritance done manually through object composition. Caller implements Parent with call().
+        Caller contains Delegate. call(delegate.call);
+    <p>
+    <h4>Factory pattern</h4>
+    <p>The factory method pattern deals with the problem of creating objects (products) without specifying the exact
+        class of object that will be created.
+    <p>
+    <p>interface Product, with Concrete implementation, Factory will create these Products with a create method,
+        depending on a parameter (i.e. switch case)
+    <p>
+</div>
+<nav>
+    <a class="btn btn-outline-primary" href="#">Up</a>
+    <a class="btn btn-outline-primary" href="index.html">Back</a>
+</nav>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
